@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Dog Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #fact-display {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pawsome Dog Facts!</h1>
+        <p id="fact-display"></p>
+        <button id="new-fact-btn">Gimme Another One!</button>
+    </div>
+    <script>
+        const facts = [
+            "Arre bhai, did you know dogs can learn to 'smile'? It's more like copying their humans than real khushi, but still cute na?",
+            "A dog's nose print is like an Aadhaar card - totally unique! Next time your pup boops the window, frame it, yaar!",
+            "See your dog kicking grass after potty? They're not hiding anything, just showing off their lawn-fixing skills!",
+            "Dogs curl up when they sleep to protect their tummy. Or maybe they're practicing for 'So You Think You Can Dance - Doggy Edition'!",
+            "The smallest dog, the Chihuahua, is named after a Mexican state. Coincidence? I think not! Those pups are feisty like mirchi!",
+            "Dogs understand 250 words and gestures. So basically, they're ignoring most of what you say, haan?",
+            "A Greyhound can go from 0 to superfast in 3 steps! Faster than finding parking in Delhi!",
+            "Your dog's nose is 10,000 times stronger than yours. Explains why they love that stale roti you dropped!",
+            "The Beatles song 'A Day in the Life' has a whistle only dogs can hear. Paul McCartney made it for his own doggy. Rock on, pups!",
+            "There's a dog in New Zealand who learned to drive! Don't worry, only on a special track. And he wears his seatbelt, safe driving!"
+        ];
+
+        const factDisplay = document.getElementById('fact-display');
+        const newFactBtn = document.getElementById('new-fact-btn');
+
+        function displayRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factDisplay.textContent = facts[randomIndex];
+        }
+
+        newFactBtn.addEventListener('click', displayRandomFact);
+
+        // Display a random fact on page load
+        displayRandomFact();
+    </script>
+</body>
+</html>
